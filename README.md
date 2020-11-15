@@ -1,2 +1,2 @@
 # sample-java-code
-Just creating a sample repository
+Just creating a sample Springboot application

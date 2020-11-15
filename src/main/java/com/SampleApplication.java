@@ -13,7 +13,7 @@ public class SampleApplication extends SpringBootServletInitializer {
 
 	@Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-      return application.sources(DemoApplication.class);
+      return application.sources(SampleApplication.class);
    }
     public static void main(String args[]){
         System.out.println("Sample code");

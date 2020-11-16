@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Deploy'){
             steps{
-                sh '/var/lib/jenkins/deploy.sh run'
+                sh /var/lib/jenkins/deploy.sh
             }
         }
        }

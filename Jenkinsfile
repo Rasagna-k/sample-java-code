@@ -20,7 +20,7 @@ pipeline {
         stage('Deploy'){
             steps{
                 sh ''' 
-                      ssh -i /root/aws.pem ec2-user@3.16.147.26 '/opt/tomcat9/bin/catalina.sh run' 
+                      ssh -i /root/aws.pem ec2-user@3.16.147.26 'sudo /opt/tomcat9/bin/catalina.sh run' 
                    '''
             }
         }

@@ -10,9 +10,17 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+        stage('Copy war'){
+            steps{
+                sh 'scp -i /root/aws.pem /var/lib/jenkins/workspace/kins-multibranch-pipeline_master/target/sample-application-0.0.4-SNAPSHOT.war ec2-user@3.16.147.26:/opt/tomcat9/webapps
+'
+            }
+        }
         stage('Deploy'){
             steps{
-                sh 'sudo /var/lib/jenkins/deploy.sh'
+                sh ''' 
+                      ssh -i /root/aws.pem ec2-user@3.16.147.26 '/opt/tomcat9/bin/catalina.sh run' 
+                   '''
             }
         }
        }

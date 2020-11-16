@@ -10,5 +10,10 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+        stage('Deploy'){
+            steps{
+                sh '/var/lib/jenkins/deploy.sh'
+            }
+        }
        }
 }

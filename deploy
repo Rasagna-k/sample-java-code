@@ -8,7 +8,7 @@ pipeline {
         stage('Copy war'){
             steps{
                 sh '''
-                    scp -i /root/aws.pem /var/lib/jenkins/workspace/kins-multibranch-pipeline_master/target/test.txt ec2-user@3.16.147.26:/opt/tomcat9/webapps
+                    scp -i /root/aws.pem -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null /var/lib/jenkins/workspace/kins-multibranch-pipeline_master/target/test.txt ec2-user@3.16.147.26:/opt/tomcat9/webapps
                    '''
             }
         }
